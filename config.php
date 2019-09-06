@@ -1,0 +1,4 @@
+<?php
+
+  //Secret Key
+  $key = "";
