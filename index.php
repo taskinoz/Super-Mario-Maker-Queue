@@ -96,15 +96,7 @@ else{
 			</script>
 			<style>
 				/* RESET */
-				html,body{border:0;padding:0;margin:0;font-family:Arial;counter-reset:a}
-				h1{margin:5px 0;}
-				.codes{text-transform:uppercase}
-				.codes:empty::before{content:"There are no levels in the Queue";text-transform: none}
-				.code:first-child{font-size:1.2em}
-				.code::before{
-					counter-increment: a;
-					content: counter(a) ") ";
-				}
+				html,body{border:0;padding:0;margin:0}
 			</style>
 		</head>
 		<body>
