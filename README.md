@@ -1,4 +1,4 @@
-<p align="center" style="text-align:center"><img width="130" height="150" src="https://raw.githubusercontent.com/taskinoz/Super-Mario-Maker-Queue/master/img/Mario%20Queue.png" alt="Titanfall Twitch Integration" /></p>
+<p align="center" style="text-align:center"><img width="256" height="256" src="https://raw.githubusercontent.com/taskinoz/Super-Mario-Maker-Queue/master/img/Mario%20Queue.png" alt="Titanfall Twitch Integration" /></p>
 
 # Super-Mario-Maker-Queue
 A custom self hosted Super Mario Maker Queue
