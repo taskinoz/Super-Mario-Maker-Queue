@@ -27,35 +27,66 @@ if ((isset($_GET['name']) || isset($_GET['code'])) && isset($_GET['key'])){
 		// Check ID
 		if (checkID($code)){
 			// Write File
-      if (file_exists($file)) {
-        //Set $queueData to the JSON data
+			if (file_exists($file)) {
+				//Set $queueData to the JSON data
 				$raw = file_get_contents($file);
-        $queueData = json_decode($raw);
+				$queueData = json_decode($raw);
 				$order = (count(json_decode($raw,true)))+1;
-      }
-      else {
-        //Create File
-        fopen($file, 'w') or die('Cannot open file:  '.$file); //implicitly creates file
+			}
+			else {
+				//Create File
+				fopen($file, 'w') or die('Cannot open file:  '.$file); //implicitly creates file
 				$order = 1;
-      }
+			}
 
-      //Create JSON Objects
-      $currentData->name = $name;
-      $currentData->code = $code;
-      $queueData->$order = $currentData;
+			//Create JSON Objects
+			$currentData->name = $name;
+			$currentData->code = $code;
+			$queueData->$order = $currentData;
 
-      //Encode JSON
-      $queueJSON = json_encode($queueData, JSON_PRETTY_PRINT);
+			//Encode JSON
+			$queueJSON = json_encode($queueData, JSON_PRETTY_PRINT);
 
-      //Write JSON
+			//Write JSON
 			$jsonFile = fopen($file,'w') or die('Cannot open file:  '.$file); //implicitly creates file
-      fwrite($jsonFile,$queueJSON);
-      fclose($jsonFile);
+			fwrite($jsonFile,$queueJSON);
+			fclose($jsonFile);
 
 			echo "Your level has been added to the queue";
 		}
 		else{
 			echo "That is not a valid level ID";
+		}
+	}
+	else{
+		echo "Incorrect API key";
+	}
+}
+elseif (isset($_GET['action']) && isset($_GET['key'])) {
+	if ($_GET['key']===$key){
+		if ($_GET['action']==="next") {
+			// Get File Contents
+			$queueData = json_decode(file_get_contents("queue.json"),true);
+			// Remove the first JSOn value
+			$removed = array_shift($queueData);
+			// Re-encode the order for JSON objects
+			for ($i=1; $i < count($queueData)+1; $i++) { 
+				$currentData->$i=$queueData[$i-1];
+			}
+			// JSON encode
+			$currentData = json_encode($currentData, JSON_PRETTY_PRINT);
+			//Write JSON
+			$jsonFile = fopen($file,'w') or die('Cannot open file:  '.$file); //implicitly creates file
+			fwrite($jsonFile,$currentData);
+			fclose($jsonFile);
+			//echo json_encode($currentData);
+			echo "Level has been removed from the Queue";
+		}
+		elseif ($_GET['action']==="clear"){
+
+		}
+		else {
+			echo "That is an invalid action";
 		}
 	}
 	else{
