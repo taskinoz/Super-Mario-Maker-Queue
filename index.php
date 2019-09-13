@@ -70,7 +70,7 @@ elseif (isset($_GET['action']) && isset($_GET['key'])) {
 			// Remove the first JSOn value
 			$removed = array_shift($queueData);
 			// Re-encode the order for JSON objects
-			for ($i=1; $i < count($queueData)+1; $i++) { 
+			for ($i=1; $i < count($queueData)+1; $i++) {
 				$currentData->$i=$queueData[$i-1];
 			}
 			// JSON encode
@@ -83,7 +83,9 @@ elseif (isset($_GET['action']) && isset($_GET['key'])) {
 			echo "Level has been removed from the Queue";
 		}
 		elseif ($_GET['action']==="clear"){
-
+			// Delete file
+			unlink($file) or die("Couldn't delete file");
+			echo "The queue has been cleared";
 		}
 		else {
 			echo "That is an invalid action";
