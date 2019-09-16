@@ -5,6 +5,8 @@ A custom self hosted Super Mario Maker Queue
 
 ## Installation
 
+Download the files from [releases](https://github.com/taskinoz/Super-Mario-Maker-Queue/releases)
+
 Change the `key` in `config.php` to a secret word of your choosing and upload both the `config.php` and `index.php` to your webserver.
 
 ## Bot Commands
