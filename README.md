@@ -9,17 +9,43 @@ Change the `key` in `config.php` to a secret word of your choosing and upload bo
 
 ## Bot Commands
 
-### Nightbot
-Create the command `!add`
-
-Add the message:
- >`$(urlfetch https://example.url.com/?key=YOURKEYHERE&name=$(user)&code=$(query))`
+### Settings
 
 Replace `YOURKEYHERE` with the secret word you added to the `config.php`
 
 Replace `https://example.url.com` with the URL of your webserver
 
+### Nightbot
+
+**!add**
+
+Create the command `!add`
+
+Add the message:
+ >`$(urlfetch https://example.url.com/?key=YOURKEYHERE&name=$(user)&code=$(query))`
+
+**!next**
+
+Create the command `!next`
+
+Add the message:
+ >`$(urlfetch https://example.url.com/?key=YOURKEYHERE&action=next)`
+
+ Set user level to `Owner`
+
+ **!clear**
+
+Create the command `!clear`
+
+Add the message:
+ >`$(urlfetch https://example.url.com/?key=YOURKEYHERE&action=clear)`
+
+ Set user level to `Owner`
+
 ### Moobot
+
+**!add**
+
 Create the command `!add`
 
 Select advanced commands
@@ -29,9 +55,31 @@ Set the response to `URL fetch - Full (plain) response`
 Set the URL to fetch to:
 >`​https://example.url.com/?key=YOURKEYHERE&name=​` **Username of the user** `&code=​` **Command arguments**
 
-Replace `YOURKEYHERE` with the secret word you added to the `config.php`
+**!next**
 
-Replace `https://example.url.com` with the URL of your webserver
+Create the command `!next`
+
+Select advanced commands
+
+Set the response to `URL fetch - Full (plain) response`
+
+Set the URL to fetch to:
+>`​https://example.url.com/?key=YOURKEYHERE&action=next`
+
+Remove all permissions except `Moobot editors`
+
+**!clear**
+
+Create the command `!clear`
+
+Select advanced commands
+
+Set the response to `URL fetch - Full (plain) response`
+
+Set the URL to fetch to:
+>`​https://example.url.com/?key=YOURKEYHERE&action=clear`
+
+Remove all permissions except `Moobot editors`
 
 ## OBS
 
