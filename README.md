@@ -24,14 +24,18 @@ Replace `https://example.url.com` with the URL of your webserver
 Create the command `!add`
 
 Add the message:
- >`$(urlfetch https://example.url.com/?key=YOURKEYHERE&name=$(user)&code=$(query))`
+```
+$(urlfetch https://example.url.com/?key=YOURKEYHERE&name=$(user)&code=$(query))
+```
 
 **!next**
 
 Create the command `!next`
 
 Add the message:
- >`$(urlfetch https://example.url.com/?key=YOURKEYHERE&action=next)`
+```
+$(urlfetch https://example.url.com/?key=YOURKEYHERE&action=next)
+```
 
  Set user level to `Owner`
 
@@ -40,7 +44,9 @@ Add the message:
 Create the command `!clear`
 
 Add the message:
- >`$(urlfetch https://example.url.com/?key=YOURKEYHERE&action=clear)`
+```
+$(urlfetch https://example.url.com/?key=YOURKEYHERE&action=clear)
+```
 
  Set user level to `Owner`
 
@@ -55,7 +61,7 @@ Select advanced commands
 Set the response to `URL fetch - Full (plain) response`
 
 Set the URL to fetch to:
->`​https://example.url.com/?key=YOURKEYHERE&name=​` **Username of the user** `&code=​` **Command arguments**
+>​https://example.url.com/?key=YOURKEYHERE&name=​ **Username of the user** `&code=​` **Command arguments**
 
 **!next**
 
@@ -66,7 +72,7 @@ Select advanced commands
 Set the response to `URL fetch - Full (plain) response`
 
 Set the URL to fetch to:
->`​https://example.url.com/?key=YOURKEYHERE&action=next`
+>​https://example.url.com/?key=YOURKEYHERE&action=next
 
 Remove all permissions except `Moobot editors`
 
@@ -79,7 +85,7 @@ Select advanced commands
 Set the response to `URL fetch - Full (plain) response`
 
 Set the URL to fetch to:
->`​https://example.url.com/?key=YOURKEYHERE&action=clear`
+>https://example.url.com/?key=YOURKEYHERE&action=clear
 
 Remove all permissions except `Moobot editors`
 
